@@ -31,7 +31,8 @@ RUN sudo apt-get install -y supervisor && \
     sudo apt-get clean && \
     mkdir -p /linkedsee/logs/supervisord/
 
-RUN mkdir -p /data/logs/linkedsee/
+RUN mkdir -p /data/logs/linkedsee/ && mkdir -p /data/doc/ && mkdir -p /data/www/htdocs/smedia/
+
 
 EXPOSE 8000
 

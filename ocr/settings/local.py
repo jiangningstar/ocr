@@ -6,7 +6,7 @@ from .base import *
 
 GUARDIAN_MONKEY_PATCH = False
 
-DOMAIN_SMEDIA = '10.0.255.235:8000'
+DOMAIN_SMEDIA = '127.0.0.1:8000'
 
 MEDIA_ROOT = '/data/www/htdocs/smedia/'
 MEDIA_URL = '/smedia/'
