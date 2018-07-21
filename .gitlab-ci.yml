@@ -1,0 +1,22 @@
+types:
+  - build
+  - test
+
+before_script:
+  - echo '-----Welcome----- '$CI_JOB_NAME
+
+build_app:
+  type: build
+  script: echo Building!
+
+pep8:
+  stage: test
+  script:
+    - pip install -r requirements/test.txt -i https://mirrors.aliyun.com/pypi/simple/
+    - flake8 ocr_api
+
+test_app:
+  type: test
+  script:
+    - pip install -r requirements/test.txt -i https://mirrors.aliyun.com/pypi/simple/
+    - python manage.py test --pattern="test_*.py" --settings=ocr.settings.test

@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+    assets_checking:
+        image: $ocr
+        container_name: ocr
+        ports:
+            - "9001:8000"
+        environment:
+            MYSQL_SERVER: ${LINKEDSEEIP}
+            MYSQL_USER: ${MYSQLUSER}
+            MYSQL_PORT: ${SQLPORT}
+            MYSQL_PASSWORD: ${MYSQLROOTPWD}
+        volumes:
+            - ${DATAPATH}/project_config/ocr/logs/ocr.log:/linkedsee/logs/app/ocr.log
+            - /etc/localtime:/etc/localtime
